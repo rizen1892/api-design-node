@@ -38,7 +38,7 @@ app.put('/lions/:id', function(req, res) {
 
   var lion = _.findIndex(lions, {id: req.params.id});
   if (!lions[lion]) {
-    res.send();
+    res.send("Lion not found.");
   } else {
     var updatedLion = _.assign(lions[lion], update);
     res.json(updatedLion);
@@ -48,7 +48,7 @@ app.put('/lions/:id', function(req, res) {
 app.delete('/lions/:id',function(req,res){
 	var lion = _.findIndex(lions, {id: req.params.id});
 	if(!lions[lion]){
-	res.send();
+	res.send("Lion not found.");
 	}
 	else{
 	var deletedLion = _.assign(lions[lion]);
